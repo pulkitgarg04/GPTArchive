@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  width: 320px;
+  min-height: 400px;
+  max-height: 600px;
+  overflow: hidden;
+  color: #fff;
+  background-color: #333;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+header {
+  padding-left: 10px;
+  padding-right: 10px;
+  border-bottom: 1px solid #5d5d5d;
+  position: sticky;
+  top: 0;
+  background-color: #333;
+  z-index: 10;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.actions {
+  padding: 16px;
+  text-align: center;
+}
+
+.icon-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  background-color: #10a37f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.icon-btn:hover {
+  background-color: #0e8a6b;
+}
+
+.search-container {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+#search-input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #5d5d5d;
+  color: white;
+  font-size: 14px;
+  background-color: #3f3f3f;
+  transition: border 0.2s ease;
+}
+
+#search-input:focus {
+  outline: none;
+  border-color: #10a37f;
+}
+
+.bookmarks-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 16px 16px;
+}
+
+.bookmark-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border: 1px solid #6b6b6b;
+}
+
+.bookmark-item:hover {
+  background-color: #606060;
+}
+
+.bookmark-title {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.delete-btn {
+  padding: 4px;
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  color: #ff6b6b;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.delete-btn:hover {
+  color: #e65b5b;
+}
+
+.delete-btn .icon {
+  width: 16px;
+  height: 16px;
+  stroke: white;
+}
+
+
+#empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  text-align: center;
+  color: #8e8ea0;
+}
+
+.empty-icon {
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.empty-subtitle {
+  font-size: 12px !important;
+  max-width: 220px;
+}
+
+#hidden {
+  display: none;
+}
