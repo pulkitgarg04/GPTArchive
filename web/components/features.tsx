@@ -66,7 +66,7 @@ export default function Features() {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tight mb-4">Powerful Features</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            GPTArchive comes packed with everything you need to efficiently manage your ChatGPT conversations
+            GPTArchive comes packed with everything you need to efficiently manage your ChatGPT conversations.
           </p>
         </div>
 
@@ -80,7 +80,7 @@ export default function Features() {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="flex flex-col p-6 bg-white rounded-lg border border-gray-100 shadow-sm transition-all duration-200 hover:shadow-md hover:border-primary/20"
+              className="flex flex-col items-center p-6 bg-white rounded-lg border border-gray-100 shadow-sm text-center transition-all duration-200 hover:shadow-md hover:border-primary/20"
             >
               <div className="h-12 w-12 rounded-full bg-gray-200 flex items-center justify-center mb-4 text-primary">
                 {feature.icon}
@@ -94,4 +94,3 @@ export default function Features() {
     </section>
   )
 }
-
