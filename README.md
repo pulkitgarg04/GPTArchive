@@ -7,7 +7,7 @@ GPTArchive is a browser extension designed to help you bookmark and organize you
 ### 1. Add to Browser  
 Click the "Install" button below to download the extension.  
 
-**[Download GPTArchive Extension]()**  
+**[Download GPTArchive Extension](https://gptarchive.vercel.app/install)**  
 
 ---
 
