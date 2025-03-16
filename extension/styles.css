@@ -45,6 +45,7 @@ h1 {
 
 .actions {
   padding: 16px;
+  display: flex;
   text-align: center;
 }
 
@@ -53,6 +54,7 @@ h1 {
   align-items: center;
   gap: 8px;
   padding: 4px 8px;
+  margin: 0px 5px;
   background-color: #10a37f;
   color: #fff;
   border: none;

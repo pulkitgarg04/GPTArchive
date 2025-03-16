@@ -3,10 +3,38 @@ document.addEventListener("DOMContentLoaded", () => {
   const bookmarksList = document.getElementById("bookmarks-list");
   const emptyState = document.getElementById("empty-state");
   const searchInput = document.getElementById("search-input");
+  const exportBookmarksButton = document.getElementById("export-bookmarks");
 
   chrome.storage.local.get("bookmarks", (result) => {
     const bookmarks = result.bookmarks || [];
     updateUI(bookmarks);
+  });
+
+  exportBookmarksButton.addEventListener("click", () => {
+    chrome.storage.local.get("bookmarks", (result) => {
+      const bookmarks = result.bookmarks || [];
+      if (bookmarks.length === 0) {
+        alert("No bookmarks to export.");
+        return;
+      }
+  
+      let csvContent = "Title,URL\n";
+      bookmarks.forEach((bookmark) => {
+        const title = bookmark.title.replace(/"/g, '""');
+        const url = bookmark.url.replace(/"/g, '""');
+        csvContent += `"${title}","${url}"\n`;
+      });
+  
+      const blob = new Blob([csvContent], { type: "text/csv" });
+      const url = URL.createObjectURL(blob);
+  
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "bookmarks.csv";
+      a.click();
+  
+      URL.revokeObjectURL(url);
+    });
   });
 
   saveCurrentTabButton.addEventListener("click", () => {
