@@ -19,7 +19,7 @@ export default function FAQ() {
     },
     {
       question: "Can I export my bookmarked conversations?",
-      answer: "Yes, you can export your bookmarked conversations in various formats including PDF and markdown.",
+      answer: "Yes, you can export your bookmarked conversations in CSV format.",
     },
     {
       question: "Is my data secure with GPTArchive?",

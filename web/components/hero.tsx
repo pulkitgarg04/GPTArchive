@@ -24,7 +24,7 @@ export default function Hero() {
             transition={{ duration: 0.5 }}
             className="flex flex-col space-y-6 text-center md:text-left"
           >
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-gray-200 text-black text-sm font-medium mx-auto md:mx-0">
+            <div className="inline-flex px-3 py-1 rounded-full bg-gray-200 text-black text-sm font-medium md:mx-0 w-fit">
               <Bookmark className="h-4 w-4 mr-1" />
               <span>ChatGPT Bookmarking Made Simple</span>
             </div>
