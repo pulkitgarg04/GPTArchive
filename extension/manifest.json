@@ -6,14 +6,29 @@
     "permissions": [
         "storage",
         "activeTab",
-        "scripting"
+        "scripting",
+        "contextMenus"
     ],
     "host_permissions": [
+        "https://chatgpt.com/*",
         "https://chat.openai.com/*"
     ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "commands": {
+        "save_chat": {
+            "suggested_key": {
+                "default": "Alt+Shift+S",
+                "mac": "Alt+Shift+S"
+            },
+            "description": "Save current chat"
+        }
+    },
     "content_scripts": [
         {
             "matches": [
+                "https://chatgpt.com/*",
                 "https://chat.openai.com/*"
             ],
             "css": [

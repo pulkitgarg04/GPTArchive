@@ -7,8 +7,7 @@
 
 body {
   width: 320px;
-  min-height: 400px;
-  max-height: 600px;
+  height: 500px;
   overflow: hidden;
   color: #fff;
   background-color: #333;
@@ -68,6 +67,22 @@ h1 {
   background-color: #0e8a6b;
 }
 
+.secondary-btn {
+  background-color: transparent;
+  border: 1px solid #5d5d5d;
+  color: #fff;
+  padding: 6px;
+  margin: 0 4px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.secondary-btn:hover {
+  background-color: #40414f;
+  border-color: #8e8ea0;
+}
+
 .search-container {
   position: relative;
   margin-bottom: 8px;
@@ -95,20 +110,49 @@ h1 {
   padding: 8px 16px 16px;
 }
 
+.bookmarks-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.bookmarks-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.bookmarks-container::-webkit-scrollbar-thumb {
+  background-color: #5d5d5d;
+  border-radius: 4px;
+  border: 2px solid #333;
+}
+
+.bookmarks-container::-webkit-scrollbar-thumb:hover {
+  background-color: #7d7d7d;
+}
+
 .bookmark-item {
+  border-radius: 6px;
+  margin-bottom: 8px;
+  border: 1px solid #6b6b6b;
+  background-color: #3f3f3f;
+  overflow: hidden;
+}
+
+.view-mode {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 12px;
-  border-radius: 6px;
-  margin-bottom: 8px;
   cursor: pointer;
   transition: background-color 0.2s ease;
-  border: 1px solid #6b6b6b;
 }
 
-.bookmark-item:hover {
-  background-color: #606060;
+.view-mode:hover {
+  background-color: #4a4a4a;
+}
+
+.bookmark-content {
+  flex: 1;
+  overflow: hidden;
+  margin-right: 8px;
 }
 
 .bookmark-title {
@@ -118,26 +162,112 @@ h1 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: #fff;
 }
 
-.delete-btn {
-  padding: 4px;
+.bookmark-meta {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 10px;
+  background-color: #5d5d5d;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #e0e0e0;
+}
+
+.bookmark-actions {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
   background-color: transparent;
   border: none;
-  font-size: 16px;
-  color: #ff6b6b;
   cursor: pointer;
-  transition: color 0.2s ease;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  color: #8e8ea0;
+}
+
+.action-btn:hover {
+  background-color: #5d5d5d;
+  color: #fff;
 }
 
 .delete-btn:hover {
-  color: #e65b5b;
+  color: #ff6b6b;
+  background-color: rgba(255, 107, 107, 0.1);
 }
 
-.delete-btn .icon {
-  width: 16px;
-  height: 16px;
-  stroke: white;
+.edit-mode {
+  padding: 12px;
+  background-color: #2d2d2d;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.edit-mode.hidden {
+  display: none;
+}
+
+.edit-title, .edit-tags, .edit-note {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #5d5d5d;
+  background-color: #3f3f3f;
+  color: #fff;
+  font-size: 13px;
+}
+
+.edit-note {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.save-edit-btn, .cancel-edit-btn {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.save-edit-btn {
+  background-color: #10a37f;
+  color: white;
+}
+
+.save-edit-btn:hover {
+  background-color: #0e8a6b;
+}
+
+.cancel-edit-btn {
+  background-color: transparent;
+  color: #8e8ea0;
+  border: 1px solid #5d5d5d;
+}
+
+.cancel-edit-btn:hover {
+  background-color: #3f3f3f;
+  color: #fff;
 }
 
 

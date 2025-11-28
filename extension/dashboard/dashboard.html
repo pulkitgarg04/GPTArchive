@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>GPTArchive Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <div class="main-content">
+    <header>
+      <div class="header-left">
+        <h1>GPTArchive</h1>
+      </div>
+      <div class="header-right">
+        <div class="search-box">
+          <input type="text" id="search-input" placeholder="Search bookmarks, tags, notes...">
+        </div>
+        <div class="actions">
+          <button id="export-btn" class="btn secondary-btn">Export CSV</button>
+          <button id="import-btn" class="btn secondary-btn">Import CSV</button>
+          <input type="file" id="import-file" accept=".csv" style="display: none;" />
+        </div>
+      </div>
+    </header>
+
+    <div class="table-container">
+      <table id="bookmarks-table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Tags</th>
+            <th>Note</th>
+            <th>Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="bookmarks-body">
+        </tbody>
+      </table>
+      <div id="empty-state" class="hidden">
+        <p>No bookmarks found.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="edit-modal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Edit Bookmark</h3>
+      <input type="text" id="edit-title" placeholder="Title">
+      <input type="text" id="edit-tags" placeholder="Tags (comma separated)">
+      <textarea id="edit-note" placeholder="Note"></textarea>
+      <div class="modal-actions">
+        <button id="cancel-edit" class="btn secondary-btn">Cancel</button>
+        <button id="save-edit" class="btn primary-btn">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
