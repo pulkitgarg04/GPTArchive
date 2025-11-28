@@ -1,0 +1,13 @@
+# General
+.DS_Store
+.vscode/
+*.log
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Extension
+extension/*.pem
+extension/*.crx
