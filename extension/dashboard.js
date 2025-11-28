@@ -2,9 +2,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const bookmarksBody = document.getElementById("bookmarks-body");
   const searchInput = document.getElementById("search-input");
   const emptyState = document.getElementById("empty-state");
+  const deleteAllBtn = document.getElementById("delete-all-btn");
   const exportBtn = document.getElementById("export-btn");
   const importBtn = document.getElementById("import-btn");
   const importFile = document.getElementById("import-file");
+  
+  const tagsFilterBtn = document.getElementById("tags-filter-btn");
+  const tagsDropdown = document.getElementById("tags-dropdown");
   
   const editModal = document.getElementById("edit-modal");
   const editTitle = document.getElementById("edit-title");
@@ -18,9 +22,21 @@ document.addEventListener("DOMContentLoaded", () => {
   loadBookmarks();
 
   searchInput.addEventListener("input", handleSearch);
+  deleteAllBtn.addEventListener("click", handleDeleteAll);
   exportBtn.addEventListener("click", handleExport);
   importBtn.addEventListener("click", () => importFile.click());
   importFile.addEventListener("change", handleImport);
+  
+  tagsFilterBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    tagsDropdown.classList.toggle("hidden");
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!tagsFilterBtn.contains(e.target) && !tagsDropdown.contains(e.target)) {
+      tagsDropdown.classList.add("hidden");
+    }
+  });
   
   cancelEditBtn.addEventListener("click", closeModal);
   saveEditBtn.addEventListener("click", saveEdit);
@@ -33,6 +49,49 @@ document.addEventListener("DOMContentLoaded", () => {
     chrome.storage.sync.get("bookmarks", (result) => {
       const bookmarks = result.bookmarks || [];
       renderTable(bookmarks);
+      populateTagsDropdown(bookmarks);
+    });
+  }
+
+  function populateTagsDropdown(bookmarks) {
+    const tags = new Set();
+    bookmarks.forEach(b => {
+      if (b.tags && Array.isArray(b.tags)) {
+        b.tags.forEach(t => tags.add(t.trim()));
+      }
+    });
+
+    tagsDropdown.innerHTML = "";
+    
+    if (tags.size === 0) {
+      const empty = document.createElement("div");
+      empty.className = "dropdown-empty";
+      empty.textContent = "No tags found";
+      tagsDropdown.appendChild(empty);
+      return;
+    }
+
+    const allOption = document.createElement("div");
+    allOption.className = "dropdown-tag";
+    allOption.textContent = "All Bookmarks";
+    allOption.onclick = () => {
+      searchInput.value = "";
+      handleSearch({ target: searchInput });
+      tagsDropdown.classList.add("hidden");
+    };
+    tagsDropdown.appendChild(allOption);
+
+    Array.from(tags).sort().forEach(tag => {
+      if (!tag) return;
+      const item = document.createElement("div");
+      item.className = "dropdown-tag";
+      item.textContent = tag;
+      item.onclick = () => {
+        searchInput.value = tag;
+        handleSearch({ target: searchInput });
+        tagsDropdown.classList.add("hidden");
+      };
+      tagsDropdown.appendChild(item);
     });
   }
 
@@ -66,6 +125,11 @@ document.addEventListener("DOMContentLoaded", () => {
           const span = document.createElement("span");
           span.className = "tag";
           span.textContent = tag;
+          span.onclick = (e) => {
+             e.stopPropagation();
+             searchInput.value = tag;
+             handleSearch({ target: searchInput });
+          };
           tagsDiv.appendChild(span);
         });
         tagsTd.appendChild(tagsDiv);
@@ -170,6 +234,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  function handleDeleteAll() {
+    if (!confirm("Are you sure you want to delete 'all' bookmarks? This action cannot be undone.")) {
+      return;
+    }
+    
+    if (!confirm("Really delete everything? All your saved chats will be lost forever.")) {
+      return;
+    }
+
+    chrome.storage.sync.set({ bookmarks: [] }, () => {
+      loadBookmarks();
+    });
+  }
+
   function handleExport() {
     chrome.storage.sync.get("bookmarks", (result) => {
       const bookmarks = result.bookmarks || [];
@@ -271,7 +349,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
     };
-    
+
     reader.readAsText(file);
     event.target.value = ""; 
   }

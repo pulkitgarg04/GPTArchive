@@ -15,7 +15,18 @@
         <div class="search-box">
           <input type="text" id="search-input" placeholder="Search bookmarks, tags, notes...">
         </div>
+        
+        <div class="tag-filter-container">
+          <button id="tags-filter-btn" class="btn secondary-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+            Filter by Tag
+          </button>
+          <div id="tags-dropdown" class="tags-dropdown hidden">
+          </div>
+        </div>
+
         <div class="actions">
+          <button id="delete-all-btn" class="btn danger-btn">Delete All</button>
           <button id="export-btn" class="btn secondary-btn">Export CSV</button>
           <button id="import-btn" class="btn secondary-btn">Import CSV</button>
           <input type="file" id="import-file" accept=".csv" style="display: none;" />

@@ -136,6 +136,13 @@ tr:hover td {
   border-radius: 12px;
   font-size: 12px;
   font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.tag:hover {
+  background-color: #10a37f;
+  color: white;
 }
 
 .note-cell {
@@ -191,6 +198,17 @@ tr:hover td {
   background-color: #40414f;
   border-color: #8e8ea0;
   color: #fff;
+}
+
+.danger-btn {
+  background-color: transparent;
+  border: 1px solid #ef4444;
+  color: #ef4444;
+}
+
+.danger-btn:hover {
+  background-color: #ef4444;
+  color: white;
 }
 
 .icon-btn {
@@ -300,4 +318,51 @@ tr:hover td {
 
 .hidden {
   display: none !important;
+}
+
+.tag-filter-container {
+  position: relative;
+}
+
+.tags-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background-color: #202123;
+  border: 1px solid #4d4d4f;
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  width: 200px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 50;
+  padding: 8px;
+}
+
+.tags-dropdown.hidden {
+  display: none;
+}
+
+.dropdown-tag {
+  display: block;
+  padding: 8px 12px;
+  color: #ececf1;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dropdown-tag:hover {
+  background-color: #40414f;
+  color: #fff;
+}
+
+.dropdown-empty {
+  padding: 8px 12px;
+  color: #8e8ea0;
+  font-size: 13px;
+  text-align: center;
 }

@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loadBookmarks();
 
   openDashboardButton.addEventListener("click", () => {
-    chrome.tabs.create({ url: "dashboard/dashboard.html" });
+    chrome.tabs.create({ url: "dashboard.html" });
   });
   saveCurrentTabButton.addEventListener("click", handleSave);
   searchInput.addEventListener("input", handleSearch);

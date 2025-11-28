@@ -25,7 +25,7 @@ chrome.commands.onCommand.addListener((command) => {
 
 function saveBookmark(tab) {
   if (!tab.url.includes("chatgpt.com") && !tab.url.includes("chat.openai.com")) {
-    return; // Should be handled by patterns, but safety check
+    return;
   }
 
   chrome.storage.sync.get("bookmarks", (result) => {
@@ -33,9 +33,6 @@ function saveBookmark(tab) {
     const alreadyExists = bookmarks.some((b) => b.url === tab.url);
 
     if (alreadyExists) {
-      // Optional: Notify user it exists. 
-      // Since this is background, we can't easily alert. 
-      // We could change the icon or badge.
       chrome.action.setBadgeText({ text: "!", tabId: tab.id });
       setTimeout(() => chrome.action.setBadgeText({ text: "", tabId: tab.id }), 2000);
       return;
