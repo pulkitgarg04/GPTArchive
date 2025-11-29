@@ -13,7 +13,7 @@ export default function Home() {
       <Features />
 
       <section className="py-20 bg-gray-50">
-        <div className="container px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tight mb-4">How It Works</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -34,16 +34,16 @@ export default function Home() {
               <div className="h-12 w-12 rounded-full bg-gray-300 flex items-center justify-center mb-4">
                 <span className="text-2xl font-bold">2</span>
               </div>
-              <h3 className="text-xl font-medium mb-2">Browse ChatGPT</h3>
-              <p className="text-muted-foreground">Visit ChatGPT and navigate to any conversation you want to save</p>
+              <h3 className="text-xl font-medium mb-2">Save with Context</h3>
+              <p className="text-muted-foreground">Bookmark chats with custom titles, tags, and notes for better organization</p>
             </div>
 
             <div className="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-sm transition-all duration-200 hover:shadow-md">
               <div className="h-12 w-12 rounded-full bg-gray-300 flex items-center justify-center mb-4">
                 <span className="text-2xl font-bold">3</span>
               </div>
-              <h3 className="text-xl font-medium mb-2">Save & Organize</h3>
-              <p className="text-muted-foreground">Click the extension icon and save your chat with one click</p>
+              <h3 className="text-xl font-medium mb-2">Manage Your Archive</h3>
+              <p className="text-muted-foreground">Use the dashboard to search, filter by tags, and manage your saved conversations</p>
             </div>
           </div>
 
@@ -62,7 +62,7 @@ export default function Home() {
       <FAQ />
 
       <section className="py-20 bg-gray-800 text-white">
-        <div className="container px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold tracking-tight mb-4">Never Lose a Valuable ChatGPT Conversation Again</h2>
             <p className="mb-8 text-primary-foreground/90">

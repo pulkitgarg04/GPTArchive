@@ -7,7 +7,7 @@ export default function InstallPage() {
   return (
     <main className="flex min-h-screen flex-col">
       <section className="py-12 md:py-20">
-        <div className="container px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <Link
               href="/"
@@ -56,16 +56,14 @@ export default function InstallPage() {
                         Go to {'"'}Extensions{'“'} section in your browser. Turn on {'"'}Developer Mode{'“'}. Click on {'"'}Load
                         Unpacked{'“'} and select the extension folder you have downloaded.
                       </p>
-                      <div className="mt-4 rounded-lg overflow-hidden border border-gray-200">
-                        <iframe
-                          width="100%"
-                          height="315"
-                          src="https://www.youtube.com/embed/QDegxkDscSM?si=PZKJbKLGqIXI_kxo"
-                          title="YouTube video player"
-                          frameBorder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                        ></iframe>
+                      <div className="mt-4 rounded-lg overflow-hidden border border-gray-200 max-w-md mx-auto">
+                        <Image
+                          src="/load-unpacked-extension.png"
+                          alt="Load Unpacked Extension"
+                          width={640}
+                          height={360}
+                          className="w-full h-auto"
+                        />
                       </div>
                     </div>
                   </li>
@@ -126,19 +124,21 @@ export default function InstallPage() {
                   <div className="p-4 sm:p-6 bg-gray-50 rounded-lg">
                     <h3 className="text-lg font-medium mb-2">Bookmarking a Conversation</h3>
                     <ol className="list-decimal list-inside space-y-2 text-gray-600">
-                      <li>Visit ChatGPT and navigate to any conversation</li>
-                      <li>Click the GPTArchive icon in your browser toolbar</li>
-                      <li>Click the {'"'}Save{'“'} button to bookmark the current conversation</li>
+                      <li>Visit ChatGPT and navigate to any conversation.</li>
+                      <li>Click the GPTArchive icon in your browser toolbar.</li>
+                      <li>Enter a custom title, add tags (comma separated), and write a note.</li>
+                      <li>Click the {'"'}Save{'“'} button to bookmark the conversation.</li>
                     </ol>
                   </div>
 
                   <div className="p-4 sm:p-6 bg-gray-50 rounded-lg">
-                    <h3 className="text-lg font-medium mb-2">Viewing Your Bookmarks</h3>
+                    <h3 className="text-lg font-medium mb-2">Managing Your Archive</h3>
                     <ol className="list-decimal list-inside space-y-2 text-gray-600">
-                      <li>Click the GPTArchive icon in your browser toolbar</li>
-                      <li>Click {'"'}View All{'“'} to see all your bookmarked conversations</li>
-                      <li>Use the search bar to find specific bookmarks</li>
-                      <li>Click on any bookmark to open the original conversation</li>
+                      <li>Click the settings icon in the popup to open the Dashboard.</li>
+                      <li><strong>Search & Filter:</strong> Use the search bar or the {'"'}Filter by Tag{'“'} dropdown to find specific chats.</li>
+                      <li><strong>Organize:</strong> Edit tags and notes, or delete bookmarks you no longer need.</li>
+                      <li><strong>Import/Export:</strong> Use the CSV options to backup your data or move it to another device.</li>
+                      <li><strong>Delete All:</strong> Use the {'"'}Delete All{'“'} button to clear your archive (use with caution!).</li>
                     </ol>
                   </div>
                 </div>

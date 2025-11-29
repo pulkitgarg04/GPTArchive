@@ -68,18 +68,18 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-gray-600 hover:text-emerald-600 transition-colors">
-                  Documentation
+                <Link href="https://github.com/pulkitgarg04/GPTArchive" className="text-gray-600 hover:text-emerald-600 transition-colors">
+                  Source Code
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-gray-600 hover:text-emerald-600 transition-colors">
+                <Link href="https://github.com/pulkitgarg04/GPTArchive/blob/main/PRIVACY_POLICY.md" className="text-gray-600 hover:text-emerald-600 transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-gray-600 hover:text-emerald-600 transition-colors">
-                  Terms of Service
+                <Link href="https://github.com/pulkitgarg04/GPTArchive/blob/main/CONTRIBUTING.md" className="text-gray-600 hover:text-emerald-600 transition-colors">
+                  Contribute
                 </Link>
               </li>
             </ul>

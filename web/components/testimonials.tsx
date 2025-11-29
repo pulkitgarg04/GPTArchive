@@ -30,7 +30,7 @@ export default function Testimonials() {
       role: "GPTArchive's Developer",
       content:
         "GPTArchive has completely transformed how I save and reference my ChatGPT conversations. It's an essential tool for my research work.",
-      avatar: "https://media.licdn.com/dms/image/v2/D5603AQG4nlzMeTyBWg/profile-displayphoto-shrink_400_400/B56ZWVWgm7HoAg-/0/1741967462924?e=1747872000&v=beta&t=QE94PqEvw1LzIogzYbsSqIQqjM7e0NHeztNloOjsEr4",
+      avatar: "https://avatars.githubusercontent.com/u/87312278?v=4",
     },
     {
       name: "Anmol Tuetja",
@@ -40,11 +40,11 @@ export default function Testimonials() {
       avatar: "https://avatars.githubusercontent.com/u/139005713?v=4",
     },
     {
-      name: "Ishan Kumar",
+      name: "Kavya Goel",
       role: "Community Manager",
       content:
         "The ability to quickly bookmark and categorize ChatGPT conversations has been a game-changer for my workflow. Highly recommended.",
-      avatar: "https://media.licdn.com/dms/image/v2/D5603AQERIzBF976ASQ/profile-displayphoto-shrink_400_400/B56ZQyhYnVHIAk-/0/1736014401951?e=1747872000&v=beta&t=axIVjyDAGb93NQ1EpGqUGvIl-oJmLQCkIAB5yItjjzY",
+      avatar: "https://avatars.githubusercontent.com/u/147709304?v=4",
     },
   ]
 
@@ -69,7 +69,7 @@ export default function Testimonials() {
 
   return (
     <section id="testimonials" className="py-20 bg-gray-50">
-      <div className="container px-4 md:px-6">
+      <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tight mb-4">What Our Users Say</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
